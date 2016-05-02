@@ -14,7 +14,7 @@
 	//]]>
     </script>
 
-<script type="text/javascript" src="iepngfix_tilebg.js"></script>
+<script type="text/javascript" src="js/iepngfix_tilebg.js"></script>
 <style type="text/css">
 img, div { behavior: url(iepngfix.htc) }
 </style>
