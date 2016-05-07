@@ -7,13 +7,21 @@
     <?php include_once("includes/analytics.php"); ?><!-- insert page specific head content here-->
     <script type="text/javascript">
         $(document).ready(function(){
-        $("input, textarea").addClass("idle");
-            $("input, textarea").focus(function(){
-                $(this).addClass("activeField").removeClass("idle");
-        }).blur(function(){
-                $(this).removeClass("activeField").addClass("idle");
+            $("input, textarea").addClass("idle");
+                $("input, textarea").focus(function(){
+                    $(this).addClass("activeField").removeClass("idle");
+            }).blur(function(){
+                    $(this).removeClass("activeField").addClass("idle");
+            });
         });
-        });
+        window.onload = function() {
+            var recaptcha = document.forms["myForm"]["g-recaptcha-response"];
+            recaptcha.required = true;
+            recaptcha.oninvalid = function(e) {
+                
+                alert("Please complete the captcha");
+            }
+        }
     </script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
@@ -39,9 +47,8 @@
                 <p><label for="phone">Phone</label><input id="phone" maxlength="40" name="phone" size="20" type="text"><br></p>
                 <p>How can we help you?
                 <textarea id="00N80000004rnnj" name="comment" wrap="soft"></textarea><br></p>
-                
-                <p><input name="submit" type="submit"></p>
-            <div class="g-recaptcha" data-sitekey="6LfVSx8TAAAAAKrx2ejQCvahBdzljRupkIKwneFr"></div>
+                <div class="g-recaptcha" data-sitekey="6LfVSx8TAAAAAKrx2ejQCvahBdzljRupkIKwneFr"></div>
+                <p><input name="submit" type="submit"></p>            
             </form>
             <br>
             <br>            
