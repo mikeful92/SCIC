@@ -8,7 +8,7 @@ $publickey = $config['siteKey'];
 // you got this from the signup page
 $privatekey = $config['secretKey'];
 // empty response
-$response = null
+$response = null;
 // check secret key
 $reCaptcha = new ReCaptcha($privatekey);
 
