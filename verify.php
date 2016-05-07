@@ -1,5 +1,5 @@
 <?php
-$config = parse_ini_file('/outside/webserver/app-config.ini', true);
+$config = parse_ini_file('reCaptcha-config.ini', true);
 ob_start();
 session_start();
 require_once('includes/recaptchalib.php');
