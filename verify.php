@@ -2,7 +2,7 @@
 $config = parse_ini_file('reCaptcha-config.ini', true);
 ob_start();
 session_start();
-require_once('includes/recaptchalib.php');
+require_once("includes/recaptchalib.php");
 //Recaptcha Settings
 $publickey = $config['siteKey'];
 // you got this from the signup page
