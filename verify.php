@@ -7,21 +7,25 @@ require_once("includes/recaptchalib.php");
 $publickey = $config['siteKey'];
 // you got this from the signup page
 $privatekey = $config['secretKey'];
+// empty response
+$response = null
+// check secret key
+$reCaptcha = new ReCaptcha($privatekey);
+
 //curl method posting
 //extract data from the post
 extract($_POST);
-    
-if ($submit){
-    $resp = recaptcha_check_answer ($privatekey,   $_SERVER["REMOTE_ADDR"],   $_POST["recaptcha_challenge_field"],   $_POST["recaptcha_response_field"]); 
-    if (!$resp->is_valid) {
-      echo("Verify is failing");
-      die ("<p>The reCAPTCHA wasn't entered correctly. Go back and try it again.<br>" .         "(reCAPTCHA said: " . $resp->error . ")</p>");
-    }        
-    else {
+
+if ($_POST["g-recaptcha-response"]) {
+    $response = $reCaptcha->verifyResponse(
+        $_SERVER["REMOTE_ADDR"],
+        $_POST["g-recaptcha-response"]
+    );
+    if ($response != null && $response->success) {
       //set POST variables
       // CTR curl code to resubmit to Salesforce web to lead
       //set POST variables
-      echo("Verify is progressing 1");
+      echo("Verify is progressing");
       $url = 'https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
       $fields = array(
         'oid'=>urlencode($oid),
@@ -52,6 +56,9 @@ if ($submit){
       //close connection
       curl_close($ch);
     }
-
-}//if submit
+    else{
+      echo("Verify is failing");
+      die ("<p>The reCAPTCHA wasn't entered correctly. Go back and try it again.<br>" .         "(reCAPTCHA said: " . $response->errorCodes . ")</p>");
+    }
+}
 ?>
