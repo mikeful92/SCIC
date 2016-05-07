@@ -26,6 +26,7 @@ if ($submit){
       $fields = array(
         'oid'=>urlencode($oid),
         'retURL'=>urlencode($retURL),
+        'salutation'=>urlencode($salutation),
         'first_name'=>urlencode($first_name),
         'last_name'=>urlencode($last_name),
         'phone'=>urlencode($phone),
