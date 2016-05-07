@@ -3,9 +3,9 @@ ob_start();
 session_start();
 require_once('includes/recaptchalib.php');
 //Recaptcha Settings
-$publickey = "6LeuUh4TAAtAAAFz6sokIh0bpllN-qWyErjzPOaQU";
+$publickey = "6LfSSx8TAAAAAL7JWqsIZbLxj_of8x5yUpoT3CAb";
 // you got this from the signup page
-$privatekey = "6LeuUh4TAAAAAIQgrFzRw7967rsSdCi2xTszKmMt";
+$privatekey = "6LfSSx8TAAAAAPaNirSQhxAIbvBf2hDem6inm4lB";
 //curl method posting
 //extract data from the post
 extract($_POST);
@@ -25,7 +25,7 @@ if ($submit){
       // CTR curl code to resubmit to Salesforce web to lead
       //set POST variables
       echo("Verify is progressing 1");
-      $url = 'https://www.test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+      $url = 'https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
       $fields = array(
         'oid'=>urlencode($oid),
         'retURL'=>urlencode($retURL),
