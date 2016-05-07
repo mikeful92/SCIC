@@ -25,7 +25,14 @@
         <h1>Request Information</h1>
         <div id="inputArea">
             <form action="verify.php" method="POST">
-                <input name="oid" type="hidden" value="00D4B000000CtYy"><input name="retURL" type="hidden" value="http://65insurance.com/thank-you.php">
+                <input type=hidden name="oid" value="00D80000000Lpoq">
+                <input name="retURL" type="hidden" value="http://65insurance.com/thank-you.php">
+                <p><label for="salutation">Salutation</label><select  id="salutation" name="salutation"><option value="">--None--</option><option value="Mrs.">Mrs.</option>
+                <option value="Ms.">Ms.</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Dr.">Dr.</option>
+                </select><br>
+                </p>
                 <p><label for="first_name">First Name</label><input id="first_name" maxlength="40" name="first_name" size="30" type="text"></p>
                 <p><label for="last_name">Last Name</label><input id="last_name" maxlength="80" name="last_name" size="30" type="text"></p>
                 <p>Birthdate:<span class="dateInput dateOnlyInput"><input id="00N80000002ngQ5" name="birthdate" size="12" type="text"></span><br></p>
