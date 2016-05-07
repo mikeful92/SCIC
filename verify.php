@@ -15,8 +15,9 @@ $reCaptcha = new ReCaptcha($privatekey);
 //curl method posting
 //extract data from the post
 extract($_POST);
-
+echo("extact");
 if ($_POST["g-recaptcha-response"]) {
+
     $response = $reCaptcha->verifyResponse(
         $_SERVER["REMOTE_ADDR"],
         $_POST["g-recaptcha-response"]
@@ -60,5 +61,6 @@ if ($_POST["g-recaptcha-response"]) {
       echo("Verify is failing");
       die ("<p>The reCAPTCHA wasn't entered correctly. Go back and try it again.<br>" .         "(reCAPTCHA said: " . $response->errorCodes . ")</p>");
     }
+    echo("Nothing");
 }
 ?>
