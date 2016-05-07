@@ -15,7 +15,7 @@
             });
         });
         window.onload = function() {
-            var recaptcha = document.forms["myForm"]["g-recaptcha-response"];
+            var recaptcha = document.forms["contact-us"]["g-recaptcha-response"];
             recaptcha.required = true;
             recaptcha.oninvalid = function(e) {
                 
@@ -31,7 +31,7 @@
     <div id="pageLeft">
         <h1>Request Information</h1>
         <div id="inputArea">
-            <form action="verify.php" method="POST">
+            <form action="verify.php" method="POST" name="contact-us">
                 <input type=hidden name="oid" value="00D80000000Lpoq">
                 <input name="retURL" type="hidden" value="http://65insurance.com/thank-you.php">
                 <p><label for="salutation">Salutation</label><select  id="salutation" name="salutation"><option value="">--None--</option><option value="Mrs.">Mrs.</option>
