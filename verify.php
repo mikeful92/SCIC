@@ -1,4 +1,5 @@
 <?php
+echo("Hello");
 $config = parse_ini_file('reCaptcha-config.ini', true);
 ob_start();
 session_start();
@@ -7,15 +8,13 @@ require_once("includes/recaptchalib.php");
 $publickey = $config['siteKey'];
 // you got this from the signup page
 $privatekey = $config['secretKey'];
+echo($publickey);
 // empty response
 $response = null
 // check secret key
 $reCaptcha = new ReCaptcha($privatekey);
 
-//curl method posting
-//extract data from the post
-extract($_POST);
-echo("extact");
+echo("captcha");
 if ($_POST["g-recaptcha-response"]) {
 
     $response = $reCaptcha->verifyResponse(
