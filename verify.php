@@ -25,7 +25,7 @@ if ($submit){
       // CTR curl code to resubmit to Salesforce web to lead
       //set POST variables
       echo("Verify is progressing 1");
-      $url = 'https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+      $url = 'https://www.test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
       $fields = array(
         'oid'=>urlencode($oid),
         'retURL'=>urlencode($retURL),
