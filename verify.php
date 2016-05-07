@@ -11,16 +11,12 @@ $privatekey = "6LfSSx8TAAAAAPaNirSQhxAIbvBf2hDem6inm4lB";
 extract($_POST);
     
 if ($submit){
-    $ok = 1;
-    $resp = recaptcha_check_answer ($privatekey,   $_SERVER["REMOTE_ADDR"],   $_POST["recaptcha_challenge_field"],   $_POST["recaptcha_response_field"]);
-        
+    $resp = recaptcha_check_answer ($privatekey,   $_SERVER["REMOTE_ADDR"],   $_POST["recaptcha_challenge_field"],   $_POST["recaptcha_response_field"]); 
     if (!$resp->is_valid) {
-      $ok = 0;
       echo("Verify is failing");
-    }
-
-        
-    if ($ok){
+      die ("<p>The reCAPTCHA wasn't entered correctly. Go back and try it again.<br>" .         "(reCAPTCHA said: " . $resp->error . ")</p>");
+    }        
+    else ($ok){
       //set POST variables
       // CTR curl code to resubmit to Salesforce web to lead
       //set POST variables
@@ -53,8 +49,7 @@ if ($submit){
       $result = curl_exec($ch);
       //close connection
       curl_close($ch);
-    }//if $OK else {
+    }
 
-    die ("<p>The reCAPTCHA wasn't entered correctly. Go back and try it again.<br>" .         "(reCAPTCHA said: " . $resp->error . ")</p>");
 }//if submit
 ?>
