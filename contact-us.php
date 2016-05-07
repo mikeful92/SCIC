@@ -5,7 +5,6 @@
     <title>Senior Care</title>
     <?php include("includes/head-inc.php"); ?>
     <?php include_once("includes/analytics.php"); ?><!-- insert page specific head content here-->
-    <?php require_once("includes/recaptchalib.php"); ?>
     <script type="text/javascript">
         $(document).ready(function(){
         $("input, textarea").addClass("idle");
@@ -40,8 +39,9 @@
                 <p><label for="phone">Phone</label><input id="phone" maxlength="40" name="phone" size="20" type="text"><br></p>
                 <p>How can we help you?
                 <textarea id="00N80000004rnnj" name="comment" wrap="soft"></textarea><br></p>
-                <div class="g-recaptcha" data-sitekey="6LfVSx8TAAAAAKrx2ejQCvahBdzljRupkIKwneFr"></div>
+                
                 <p><input name="submit" type="submit"></p>
+            <div class="g-recaptcha" data-sitekey="6LfVSx8TAAAAAKrx2ejQCvahBdzljRupkIKwneFr"></div>
             </form>
             <br>
             <br>            
