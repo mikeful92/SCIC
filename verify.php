@@ -1,11 +1,12 @@
 <?php
+$config = parse_ini_file('/outside/webserver/app-config.ini', true);
 ob_start();
 session_start();
 require_once('includes/recaptchalib.php');
 //Recaptcha Settings
-$publickey = "6LfSSx8TAAAAAL7JWqsIZbLxj_of8x5yUpoT3CAb";
+$publickey = $config['siteKey'];
 // you got this from the signup page
-$privatekey = "6LfSSx8TAAAAAPaNirSQhxAIbvBf2hDem6inm4lB";
+$privatekey = $config['secretKey'];
 //curl method posting
 //extract data from the post
 extract($_POST);
