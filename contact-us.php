@@ -4,8 +4,8 @@
     <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
     <title>Senior Care</title>
     <?php include("includes/head-inc.php"); ?>
-    <?php include_once("includes/analytics.php") ?><!-- insert page specific head content here-->
-
+    <?php include_once("includes/analytics.php"); ?><!-- insert page specific head content here-->
+    <?php require_once("includes/recaptchalib.php"); ?>
     <script type="text/javascript">
         $(document).ready(function(){
         $("input, textarea").addClass("idle");
