@@ -40,7 +40,7 @@
                 <p><label for="phone">Phone</label><input id="phone" maxlength="40" name="phone" size="20" type="text"><br></p>
                 <p>How can we help you?
                 <textarea id="00N80000004rnnj" name="comment" wrap="soft"></textarea><br></p>
-                <div class="g-recaptcha" data-sitekey="6LfSSx8TAAAAAL7JWqsIZbLxj_of8x5yUpoT3CAb"></div>
+                <div class="g-recaptcha" data-sitekey="6LfVSx8TAAAAAKrx2ejQCvahBdzljRupkIKwneFr"></div>
                 <p><input name="submit" type="submit"></p>
             </form>
             <br>
