@@ -16,7 +16,7 @@ if ($submit){
       echo("Verify is failing");
       die ("<p>The reCAPTCHA wasn't entered correctly. Go back and try it again.<br>" .         "(reCAPTCHA said: " . $resp->error . ")</p>");
     }        
-    else ($ok){
+    else {
       //set POST variables
       // CTR curl code to resubmit to Salesforce web to lead
       //set POST variables
